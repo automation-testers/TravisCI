@@ -1,9 +1,9 @@
 # Comment out this part if you want to use the automation-test execution by nodejs
-# language: node_js
-# node_js: 'node'
-# before_install: cd ./samples/automation-test-nodejs
-# install: npm install
-# script: npm run automation-test-script
+language: node_js
+node_js: 'node'
+before_install: cd ./samples/automation-test-nodejs
+install: npm install
+script: npm run automation-test-script
 
 # Comment out this part if you want to use the test execution by a packaged app (written in Go) with more custom environment variables
 # language: bash
