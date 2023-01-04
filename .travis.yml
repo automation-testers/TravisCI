@@ -1,9 +1,18 @@
 # Comment out this part if you want to use the automation-test execution by nodejs
 language: node_js
 node_js: 'node'
-before_install: cd ./samples/automation-test-nodejs
+before_install: cd /samples/automation-test-nodejs
 install: npm install
 script: npm run automation-test-script
+
+after_failure:
+  - for v in ~/shared/logs/*.log ; do
+    echo $v logtail ======================== ; tail -100 $v ;
+    done
+  - for v in broker middlemanager overlord router coordinator historical ; do
+    echo $v dmesg ======================== ;
+    docker exec -it druid-$v sh -c 'dmesg | tail -3' ;
+    done
 
 # Comment out this part if you want to use the test execution by a packaged app (written in Go) with more custom environment variables
 # language: bash
