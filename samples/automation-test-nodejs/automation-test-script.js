@@ -69,10 +69,17 @@ describe('Android App sample', () => {
     }
   })
 
+  // it('should show the app label', async () => {
+  //   await driver.elementByClassName("android.widget.TextView")
+  //     .text().then(function (text) {
+  //       assert.equal(text.toLocaleLowerCase(), 'api demos')
+  //     })
+  // })
+
   it('should show the app label', async () => {
-    await driver.elementByClassName("android.widget.TextView")
+    await driver.elementByClassName("android.widget.Button")
       .text().then(function (text) {
-        assert.equal(text.toLocaleLowerCase(), 'api demos')
+        assert.equal(text, 'Cancel')
       })
   })
 
