@@ -1,7 +1,7 @@
 # Comment out this part if you want to use the automation-test execution by nodejs
 language: node_js
 node_js: 'node'
-before_install: cd ./samples/automation-test-nodejs
+before_install: cd ls
 install: npm install
 script: npm run automation-test-script
 
